@@ -125,7 +125,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20220705101915">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20220729125413">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -159,9 +159,9 @@ layout-config-builder
     
 <div class="container">
   <div class="disclaimer-alert">
-    <strong class="phase-tag">Alpha</strong>
+    <strong class="phase-tag">ALPHA</strong>
     
-    This is a development website. We welcome your <a href="mailto:support@odd-dashboard.cd">feedback</a>.
+    Dashboard en developpement par l'<a href="https://espkinshasa.net/" target="_blank">Ecole de Santé Publique de l'Université Kinshasa</a> avec la collaboration de l'<a href="https://ocdd.cd/" target="_blank">OCDD</a> et l'appui du projet <a href="https://cesh.health/capacity-development-project-for-sustainable-development-in-fragile-states/" target="_blank">SDGCap</a> de <a href="https://ki.se/en" target="_blank">Karonliska Institutet-Suède</a>. Nous apprécions vos <a mailto="support@odd-dashboard.cd" target="_blank">commentaires</a>.
     
   </div>
 </div>
@@ -546,11 +546,23 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS__GLOBAL'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR_INFO', "");
+        var propertyEditor = editor.getEditor('root.SDG_INDICATOR_INFO');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_INDICATOR_INFO');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR_INFO'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_GOAL', "Goal 1: End poverty in all its forms everywhere");
+        var currentValue = normalizeCurrentValue('SDG_GOAL', "");
         var propertyEditor = editor.getEditor('root.SDG_GOAL');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -564,7 +576,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_TARGET', "Target 1.1: By 2030, eradicate extreme poverty for all people everywhere, currently measured as people living on less than $1.25 a day");
+        var currentValue = normalizeCurrentValue('SDG_TARGET', "");
         var propertyEditor = editor.getEditor('root.SDG_TARGET');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -578,7 +590,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "Indicator 1.1.1: Proportion of the population living below the international poverty line by sex, age, employment status and geographic location (urban/rural)");
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "");
         var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -632,6 +644,18 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('CONTACT', "");
+        var propertyEditor = editor.getEditor('root.CONTACT');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: CONTACT');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
     
@@ -732,11 +756,23 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_EMAIL'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('IND_DEF_CON_CLASS', "");
+        var propertyEditor = editor.getEditor('root.IND_DEF_CON_CLASS');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: IND_DEF_CON_CLASS');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.IND_DEF_CON_CLASS'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "## Definition:\nThe proportion of the employed population below the international poverty line of US$1.90 per day, also referred to as the working poverty rate, is defined as the share of employed persons living in households with per-capita consumption or income that is below the international poverty line of US$1.90.\n## Concepts:\n**Employment:** All persons of working age who, during a short reference period (one week), were engaged in any activity to produce goods or provide services for pay or profit.\n\n**Poverty Line:** Threshold below which individuals in the reference population are considered poor and above which they are considered non-poor. The threshold is generally defined as the per-capita monetary requirements an individual needs to afford the purchase of a basic bundle of goods and services. For the purpose of this indicator, an absolute international poverty line of US$1.90 per day is used.\n\n**Household in poverty:** Households are defined as poor if their income or consumption expenditure is below the poverty line taking into account the number of household members and composition (e.g., number of adults and children).\n\n**Working poor:** Employed persons living in households that are classified as poor, that is, that have income or consumption levels below the poverty line used for measurement.");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -776,6 +812,18 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CLASS_SYSTEM'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SRC_TYPE_COLL_METHOD', "");
+        var propertyEditor = editor.getEditor('root.SRC_TYPE_COLL_METHOD');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SRC_TYPE_COLL_METHOD');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SRC_TYPE_COLL_METHOD'));
 
     
@@ -876,6 +924,18 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('OTHER_METHOD', "");
+        var propertyEditor = editor.getEditor('root.OTHER_METHOD');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: OTHER_METHOD');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));
 
     
@@ -1034,7 +1094,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('national_data_updated_date', "2022-07-04");
+        var currentValue = normalizeCurrentValue('national_data_updated_date', "2022-07-28");
         var propertyEditor = editor.getEditor('root.national_data_updated_date');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1048,7 +1108,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('national_metadata_updated_date', "2022-07-04");
+        var currentValue = normalizeCurrentValue('national_metadata_updated_date', "2022-07-24");
         var propertyEditor = editor.getEditor('root.national_metadata_updated_date');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1060,6 +1120,18 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.national_metadata_updated_date'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('un_designated_tier', "");
+        var propertyEditor = editor.getEditor('root.un_designated_tier');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: un_designated_tier');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.un_designated_tier'));
 
     
@@ -1195,12 +1267,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20220705101915'></script>
+<script src='/assets/js/sdg.js?v=20220729125413'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20220705101915"></script><script>
+    <script src="/assets/js/custom.js?v=20220729125413"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
